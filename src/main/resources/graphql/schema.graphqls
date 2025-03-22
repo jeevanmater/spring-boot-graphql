@@ -1,0 +1,22 @@
+type Query{
+    getAllBooksHandler: [Book]!
+}
+
+type Mutation{
+    getBookByIdHandle(id: ID!): Book
+    addBookHandler(bookInput: BookInput) : Book
+    updateBookHandler(id: ID!,bookInput: BookInput): Book
+    deleteBookByIdHandler(id: ID!): String
+
+}
+
+type Book{
+    id: ID
+    title: String!
+    author: String!
+}
+
+input BookInput{
+    title: String!
+    author: String!
+}
